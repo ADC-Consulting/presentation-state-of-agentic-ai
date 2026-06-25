@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The State of Agentic AI — 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="adc-brand.css" />
+  <link rel="stylesheet" href="presentation.css" />
+</head>
+<body>
+
+  <!-- Shared ADC brand shape library (sparkle, blob, plus, diamond) -->
+  <svg class="brand-defs" width="0" height="0" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Chunky rounded 4-point star (soft concave lobes, not a sharp twinkle) -->
+      <path id="f-sparkle" d="M0,-42 C13,-21 21,-13 42,0 C21,13 13,21 0,42 C-13,21 -21,13 -42,0 C-21,-13 -13,-21 0,-42Z"/>
+      <!-- Rounded plus -->
+      <g id="f-plus">
+        <rect x="-11" y="-40" width="22" height="80" rx="11"/>
+        <rect x="-40" y="-11" width="80" height="22" rx="11"/>
+      </g>
+      <!-- Thin plus accent (like the small "+" in the brand art) -->
+      <g id="f-plus-thin">
+        <rect x="-5" y="-22" width="10" height="44" rx="5"/>
+        <rect x="-22" y="-5" width="44" height="10" rx="5"/>
+      </g>
+      <!-- Rounded diamond -->
+      <rect id="f-diamond" x="-28" y="-28" width="56" height="56" rx="16"/>
+      <!-- Office building (clients) -->
+      <symbol id="ico-building" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round">
+          <rect x="5" y="3" width="14" height="18" rx="1.5"/>
+          <line x1="3" y1="21" x2="21" y2="21"/>
+          <path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/>
+          <path d="M10.5 21v-3h3v3"/>
+        </g>
+      </symbol>
+      <!-- Gooey filter: fuses overlapping circles into liquid metaball blobs -->
+      <filter id="goo">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="11" result="blur"/>
+        <feColorMatrix in="blur" mode="matrix"
+          values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -10"/>
+      </filter>
+    </defs>
+  </svg>
+
+  <div class="deck" id="deck">
+
+    <!-- ── Slide 1: Landing ─────────────────────────────────────── -->
+    <section class="slide slide--active" id="slide-1" data-index="0">
+
+      <!-- Logo -->
+      <div class="slide__logo">
+        <img src="logo.png" alt="ADC" class="adc-logo" />
+      </div>
+
+      <!-- Decorative art layer — YELLOW family -->
+      <div class="slide__art" aria-hidden="true">
+        <svg class="art-svg" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <!-- Hero metaball cluster, top-right (liquid merged circles + bulb protrusions) -->
+          <g filter="url(#goo)" fill="#fff347">
+            <circle cx="958" cy="150" r="48"/>
+            <circle cx="1030" cy="128" r="34"/>
+            <circle cx="1024" cy="74" r="19"/>
+            <circle cx="1096" cy="168" r="42"/>
+            <circle cx="1166" cy="146" r="27"/>
+            <circle cx="1150" cy="216" r="16"/>
+            <circle cx="1232" cy="120" r="30"/>
+          </g>
+          <!-- Secondary metaball, mid-right -->
+          <g filter="url(#goo)" fill="#fff347">
+            <circle cx="1108" cy="452" r="46"/>
+            <circle cx="1176" cy="430" r="24"/>
+            <circle cx="1104" cy="388" r="15"/>
+            <circle cx="1168" cy="516" r="20"/>
+          </g>
+          <!-- Ring / donut -->
+          <circle cx="864" cy="244" r="19" fill="none" stroke="#fff347" stroke-width="13"/>
+          <!-- Pills / dashes -->
+          <rect x="978" y="298" width="92" height="22" rx="11" fill="#fff347"/>
+          <rect x="1098" y="298" width="40" height="22" rx="11" fill="#fff347"/>
+          <rect x="896" y="558" width="74" height="22" rx="11" fill="#fff347"/>
+          <!-- Sparkles -->
+          <use href="#f-sparkle" transform="translate(770,118) scale(1.15)" fill="#fff347"/>
+          <use href="#f-sparkle" transform="translate(966,212) scale(0.5)" fill="#fff784"/>
+          <use href="#f-sparkle" transform="translate(1252,400) scale(0.4)" fill="#fff347"/>
+          <use href="#f-sparkle" transform="translate(1024,648) scale(0.46)" fill="#fff347"/>
+          <!-- Plus marks -->
+          <use href="#f-plus" transform="translate(648,196) scale(0.62)" fill="#fff347"/>
+          <use href="#f-plus-thin" transform="translate(1206,560) scale(0.9)" fill="#fff347"/>
+          <!-- Dots -->
+          <circle cx="1242" cy="250" r="10" fill="#fff347"/>
+          <circle cx="940" cy="642" r="8" fill="#fff347"/>
+          <circle cx="906" cy="372" r="13" fill="#fff784"/>
+        </svg>
+      </div>
+
+      <!-- Content -->
+      <div class="slide__content">
+        <span class="adc-eyebrow slide__eyebrow">ADC Consulting · 2026</span>
+        <h1 class="slide__title">
+          The State of<br>
+          <span class="slide__title-accent">Agentic AI</span>
+        </h1>
+        <p class="slide__subtitle">Lots of soulsearching — but real results</p>
+      </div>
+
+    </section>
+
+    <!-- ── Slide 2: Vibe-o-meter ─────────────────────────────────── -->
+    <section class="slide slide--vibe" id="slide-2" data-index="1">
+
+      <div class="slide__logo">
+        <img src="logo.png" alt="ADC" class="adc-logo" />
+      </div>
+
+      <!-- Decorative art layer — PINK family -->
+      <div class="slide__art" aria-hidden="true">
+        <svg class="art-svg" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <!-- Top-left metaball cluster -->
+          <g filter="url(#goo)" fill="#ff9bfc">
+            <circle cx="86" cy="120" r="40"/>
+            <circle cx="150" cy="100" r="24"/>
+            <circle cx="142" cy="54" r="15"/>
+            <circle cx="86" cy="182" r="16"/>
+          </g>
+          <!-- Bottom-right metaball cluster -->
+          <g filter="url(#goo)" fill="#ff9bfc">
+            <circle cx="1198" cy="610" r="42"/>
+            <circle cx="1252" cy="586" r="22"/>
+            <circle cx="1196" cy="672" r="15"/>
+          </g>
+          <!-- Ring / donut -->
+          <circle cx="1206" cy="120" r="17" fill="none" stroke="#ff9bfc" stroke-width="11"/>
+          <!-- Pills / dashes -->
+          <rect x="40" y="430" width="64" height="18" rx="9" fill="#ffbcfd"/>
+          <rect x="1170" y="300" width="60" height="18" rx="9" fill="#ff9bfc"/>
+          <!-- Sparkles -->
+          <use href="#f-sparkle" transform="translate(1120,150) scale(0.7)" fill="#ff9bfc"/>
+          <use href="#f-sparkle" transform="translate(70,330) scale(0.5)" fill="#ffbcfd"/>
+          <use href="#f-sparkle" transform="translate(150,640) scale(0.56)" fill="#ff9bfc"/>
+          <use href="#f-sparkle" transform="translate(1110,470) scale(0.46)" fill="#ffbcfd"/>
+          <!-- Plus marks -->
+          <use href="#f-plus-thin" transform="translate(60,560) scale(0.9)" fill="#ff9bfc"/>
+          <use href="#f-plus-thin" transform="translate(1238,420) scale(0.8)" fill="#b56eb3"/>
+          <!-- Dots -->
+          <circle cx="40" cy="680" r="10" fill="#ffbcfd"/>
+          <circle cx="1256" cy="240" r="9" fill="#ff9bfc"/>
+        </svg>
+      </div>
+
+      <!-- Interactive Vibe-o-meter -->
+      <div class="vibe">
+        <div class="vibe__head">
+          <span class="adc-eyebrow slide__eyebrow vibe__eyebrow">Section 02 · The big question</span>
+          <h2 class="vibe__title">Vibe-o-meter</h2>
+        </div>
+
+        <!-- Sentiment-over-time graph -->
+        <div class="vibe__graph" id="vibeGraph">
+          <span class="vibe__axis vibe__axis--top">Hyped</span>
+          <span class="vibe__axis vibe__axis--bottom">Disillusioned</span>
+          <span class="vibe__axis vibe__axis--time">time →</span>
+          <svg class="vibe__graph-svg" viewBox="0 0 1000 240" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <line class="vibe__mid" x1="0" y1="120" x2="1000" y2="120" />
+            <polyline class="vibe__line" id="vibeLine" points="" />
+          </svg>
+          <div class="vibe__events" id="vibeEvents"></div>
+        </div>
+
+        <!-- Gauge -->
+        <div class="vibe__meter">
+          <svg class="vibe__gauge" viewBox="0 0 400 232" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <clipPath id="vibeFaceClip"><circle cx="0" cy="0" r="26" /></clipPath>
+            </defs>
+            <path class="vibe__arc" d="M35,205 A165,165 0 0 1 365,205" />
+            <g class="vibe__ticks">
+              <line x1="200" y1="40" x2="200" y2="58" />
+              <line x1="83" y1="88" x2="96" y2="101" />
+              <line x1="317" y1="88" x2="304" y2="101" />
+            </g>
+            <g id="vibeNeedle" transform="rotate(0 200 205)">
+              <line class="vibe__needle-line" x1="200" y1="205" x2="200" y2="64" />
+            </g>
+            <circle class="vibe__hub" cx="200" cy="205" r="13" />
+            <g id="vibeFaceG" transform="translate(200 64)">
+              <circle class="vibe__face-ring" r="30" />
+              <image href="edward.jpg" x="-26" y="-26" width="52" height="52" clip-path="url(#vibeFaceClip)" preserveAspectRatio="xMidYMid slice" />
+            </g>
+          </svg>
+          <div class="vibe__side vibe__side--left">
+            <strong>Disillusioned</strong><span>(but relieved)</span>
+          </div>
+          <div class="vibe__side vibe__side--right">
+            <strong>Hyped</strong><span>(but somewhat scared)</span>
+          </div>
+        </div>
+
+        <button class="vibe__start" id="vibeStart" type="button">▶&nbsp;&nbsp;Start the vibe check</button>
+      </div>
+
+    </section>
+
+    <!-- ── Slide 3: Triangle of influence ────────────────────────── -->
+    <section class="slide slide--influence" id="slide-3" data-index="2">
+
+      <div class="slide__logo">
+        <img src="logo.png" alt="ADC" class="adc-logo" />
+      </div>
+
+      <!-- Decorative art layer — GREEN family -->
+      <div class="slide__art" aria-hidden="true">
+        <svg class="art-svg" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <!-- Top-right metaball cluster -->
+          <g filter="url(#goo)" fill="#58eb81">
+            <circle cx="1188" cy="116" r="42"/>
+            <circle cx="1248" cy="96" r="24"/>
+            <circle cx="1240" cy="48" r="15"/>
+            <circle cx="1190" cy="180" r="16"/>
+          </g>
+          <!-- Bottom-left metaball cluster -->
+          <g filter="url(#goo)" fill="#58eb81">
+            <circle cx="84" cy="612" r="40"/>
+            <circle cx="146" cy="636" r="22"/>
+            <circle cx="84" cy="548" r="15"/>
+          </g>
+          <!-- Ring / donut -->
+          <circle cx="92" cy="120" r="17" fill="none" stroke="#58eb81" stroke-width="11"/>
+          <!-- Pills / dashes -->
+          <rect x="1180" y="300" width="62" height="18" rx="9" fill="#8ff2ab"/>
+          <rect x="40" y="430" width="60" height="18" rx="9" fill="#58eb81"/>
+          <!-- Sparkles -->
+          <use href="#f-sparkle" transform="translate(160,150) scale(0.66)" fill="#58eb81"/>
+          <use href="#f-sparkle" transform="translate(1210,470) scale(0.5)" fill="#8ff2ab"/>
+          <use href="#f-sparkle" transform="translate(70,330) scale(0.46)" fill="#58eb81"/>
+          <use href="#f-sparkle" transform="translate(1150,640) scale(0.56)" fill="#58eb81"/>
+          <!-- Plus marks -->
+          <use href="#f-plus-thin" transform="translate(1240,560) scale(0.9)" fill="#58eb81"/>
+          <use href="#f-plus-thin" transform="translate(60,690) scale(0.8)" fill="#3ea75c"/>
+          <!-- Dots -->
+          <circle cx="1256" cy="240" r="10" fill="#8ff2ab"/>
+          <circle cx="40" cy="250" r="9" fill="#58eb81"/>
+        </svg>
+      </div>
+
+      <!-- Triangle of influence -->
+      <div class="influence">
+        <div class="influence__head">
+          <span class="adc-eyebrow slide__eyebrow influence__eyebrow">Section 03 · What shapes my view</span>
+          <h2 class="influence__title">My triangle of influence</h2>
+        </div>
+
+        <div class="influence__stage">
+          <svg class="influence__lines" viewBox="0 0 800 620" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+            <polygon class="influence__triangle" points="400,44 80,520 720,520" />
+            <g class="influence__spokes">
+              <line x1="400" y1="361" x2="400" y2="44" />
+              <line x1="400" y1="361" x2="80" y2="520" />
+              <line x1="400" y1="361" x2="720" y2="520" />
+            </g>
+          </svg>
+
+          <!-- Top: the discourse -->
+          <div class="influence__node influence__node--top">
+            <div class="influence__badge influence__badge--circle">
+              <svg class="influence__bird" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.954 4.569c-.885.392-1.83.656-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 14-7.503 14-14 0-.21-.005-.42-.014-.63.961-.689 1.796-1.56 2.457-2.548l-.047-.02z"/></svg>
+            </div>
+            <span class="influence__cap"><strong>The discourse</strong>X / Twitter</span>
+          </div>
+
+          <!-- Bottom-left: my team -->
+          <div class="influence__node influence__node--bl">
+            <div class="influence__badge influence__badge--card">
+              <div class="influence__team" aria-label="A team of 25 consultants">
+                <i></i><i></i><i></i><i></i><i></i>
+                <i></i><i></i><i></i><i></i><i></i>
+                <i></i><i></i><i></i><i></i><i></i>
+                <i></i><i></i><i></i><i></i><i></i>
+                <i></i><i></i><i></i><i></i><i></i>
+              </div>
+            </div>
+            <span class="influence__cap"><strong>My team</strong>25 consultants</span>
+          </div>
+
+          <!-- Bottom-right: our clients -->
+          <div class="influence__node influence__node--br">
+            <div class="influence__badge influence__badge--card">
+              <div class="influence__clients" aria-label="6 client organisations">
+                <svg class="influence__client-ico" aria-hidden="true"><use href="#ico-building"/></svg>
+                <svg class="influence__client-ico" aria-hidden="true"><use href="#ico-building"/></svg>
+                <svg class="influence__client-ico" aria-hidden="true"><use href="#ico-building"/></svg>
+                <svg class="influence__client-ico" aria-hidden="true"><use href="#ico-building"/></svg>
+                <svg class="influence__client-ico" aria-hidden="true"><use href="#ico-building"/></svg>
+                <svg class="influence__client-ico" aria-hidden="true"><use href="#ico-building"/></svg>
+              </div>
+            </div>
+            <span class="influence__cap"><strong>Our clients</strong>various industries</span>
+          </div>
+
+          <!-- Center: Edward -->
+          <div class="influence__node influence__node--center">
+            <div class="influence__badge influence__badge--edward">
+              <img src="edward.jpg" alt="Edward" />
+            </div>
+            <span class="influence__cap"><strong>Me</strong></span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ── Slide 4: What is Agentic AI ───────────────────────────── -->
+    <section class="slide slide--equation" id="slide-4" data-index="3">
+
+      <div class="slide__logo">
+        <img src="logo.png" alt="ADC" class="adc-logo" />
+      </div>
+
+      <!-- Decorative art layer — TEAL family -->
+      <div class="slide__art" aria-hidden="true">
+        <svg class="art-svg" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <!-- Top-left metaball cluster -->
+          <g filter="url(#goo)" fill="#2bebcb">
+            <circle cx="86" cy="118" r="42"/>
+            <circle cx="148" cy="98" r="24"/>
+            <circle cx="140" cy="50" r="15"/>
+            <circle cx="86" cy="182" r="16"/>
+          </g>
+          <!-- Bottom-right metaball cluster -->
+          <g filter="url(#goo)" fill="#2bebcb">
+            <circle cx="1196" cy="612" r="42"/>
+            <circle cx="1250" cy="588" r="22"/>
+            <circle cx="1194" cy="674" r="15"/>
+          </g>
+          <!-- Ring / donut -->
+          <circle cx="1206" cy="120" r="17" fill="none" stroke="#2bebcb" stroke-width="11"/>
+          <!-- Pills / dashes -->
+          <rect x="40" y="430" width="62" height="18" rx="9" fill="#71f2dc"/>
+          <rect x="1170" y="300" width="60" height="18" rx="9" fill="#2bebcb"/>
+          <!-- Sparkles -->
+          <use href="#f-sparkle" transform="translate(1130,150) scale(0.66)" fill="#2bebcb"/>
+          <use href="#f-sparkle" transform="translate(70,330) scale(0.5)" fill="#71f2dc"/>
+          <use href="#f-sparkle" transform="translate(150,640) scale(0.56)" fill="#2bebcb"/>
+          <use href="#f-sparkle" transform="translate(1120,470) scale(0.46)" fill="#71f2dc"/>
+          <!-- Plus marks -->
+          <use href="#f-plus-thin" transform="translate(60,560) scale(0.9)" fill="#2bebcb"/>
+          <use href="#f-plus-thin" transform="translate(1238,420) scale(0.8)" fill="#1fa790"/>
+          <!-- Dots -->
+          <circle cx="40" cy="680" r="10" fill="#71f2dc"/>
+          <circle cx="1256" cy="240" r="9" fill="#2bebcb"/>
+        </svg>
+      </div>
+
+      <!-- Morphing equation -->
+      <div class="equation">
+        <div class="equation__head">
+          <span class="adc-eyebrow slide__eyebrow equation__eyebrow">Section 04 · Definitions</span>
+          <h2 class="equation__title">What is Agentic AI anyways?</h2>
+        </div>
+
+        <div class="eq" id="eqBody" aria-live="polite"></div>
+
+        <div class="eq__switch" role="group" aria-label="View mode">
+          <button class="eq__switch-btn is-active" data-eq="A">Agent</button>
+          <button class="eq__switch-btn" data-eq="B">Human–AI</button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ── Slide 5: Timeline / navigation hub ────────────────────── -->
+    <section class="slide slide--timeline" id="slide-5" data-index="4">
+
+      <div class="slide__logo">
+        <img src="logo.png" alt="ADC" class="adc-logo" />
+      </div>
+
+      <!-- Decorative art layer — GOLD family -->
+      <div class="slide__art" aria-hidden="true">
+        <svg class="art-svg" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <!-- Top-right metaball cluster -->
+          <g filter="url(#goo)" fill="#e5c574">
+            <circle cx="1190" cy="116" r="42"/>
+            <circle cx="1250" cy="96" r="24"/>
+            <circle cx="1242" cy="48" r="15"/>
+            <circle cx="1192" cy="180" r="16"/>
+          </g>
+          <!-- Bottom-right metaball cluster -->
+          <g filter="url(#goo)" fill="#e5c574">
+            <circle cx="1196" cy="612" r="40"/>
+            <circle cx="1250" cy="588" r="22"/>
+            <circle cx="1194" cy="672" r="15"/>
+          </g>
+          <!-- Ring / donut -->
+          <circle cx="1206" cy="360" r="17" fill="none" stroke="#e5c574" stroke-width="11"/>
+          <!-- Pills / dashes -->
+          <rect x="1150" y="250" width="62" height="18" rx="9" fill="#eed8a2"/>
+          <rect x="1170" y="470" width="56" height="18" rx="9" fill="#e5c574"/>
+          <!-- Sparkles -->
+          <use href="#f-sparkle" transform="translate(1130,210) scale(0.6)" fill="#e5c574"/>
+          <use href="#f-sparkle" transform="translate(1240,300) scale(0.42)" fill="#eed8a2"/>
+          <use href="#f-sparkle" transform="translate(1150,560) scale(0.5)" fill="#e5c574"/>
+          <!-- Plus marks -->
+          <use href="#f-plus-thin" transform="translate(1248,420) scale(0.8)" fill="#a38c52"/>
+          <!-- Dots -->
+          <circle cx="1256" cy="240" r="9" fill="#e5c574"/>
+          <circle cx="1240" cy="660" r="11" fill="#eed8a2"/>
+        </svg>
+      </div>
+
+      <!-- Timeline / navigation -->
+      <div class="timeline">
+        <div class="timeline__head">
+          <span class="adc-eyebrow slide__eyebrow timeline__eyebrow">Section 05 · The journey</span>
+          <h2 class="timeline__title">What we've been building<br>(&amp; seeing)</h2>
+        </div>
+
+        <ol class="timeline__list">
+          <li>
+            <button type="button" class="timeline__item" data-target="5">
+              <span class="timeline__era">Early 2024</span>
+              <span class="timeline__node"></span>
+              <span class="timeline__label">Building simple (RAG) chatbots</span>
+              <span class="timeline__go" aria-hidden="true">→</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="timeline__item" data-target="6">
+              <span class="timeline__era">Late 2024</span>
+              <span class="timeline__node"></span>
+              <span class="timeline__label">LLM-based workflows — or quasi-agentic systems?</span>
+              <span class="timeline__go" aria-hidden="true">→</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="timeline__item" data-target="7">
+              <span class="timeline__era">~2025</span>
+              <span class="timeline__node"></span>
+              <span class="timeline__label">Design moves to the forefront</span>
+              <span class="timeline__go" aria-hidden="true">→</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="timeline__item timeline__item--now" data-target="8">
+              <span class="timeline__era">~Now</span>
+              <span class="timeline__node"></span>
+              <span class="timeline__label">The first truly agentic systems</span>
+              <span class="timeline__go" aria-hidden="true">→</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="timeline__item timeline__item--future" data-target="9">
+              <span class="timeline__era"></span>
+              <span class="timeline__node"></span>
+              <span class="timeline__label">Looking ahead</span>
+              <span class="timeline__go" aria-hidden="true">→</span>
+            </button>
+          </li>
+        </ol>
+      </div>
+
+    </section>
+
+    <!-- ── Slide 6: Breakout — Simple RAG chatbots ───────────────── -->
+    <section class="slide slide--rag" id="slide-6" data-index="5">
+
+      <div class="slide__logo">
+        <img src="logo.png" alt="ADC" class="adc-logo" />
+      </div>
+
+      <!-- Decorative art layer — GOLD family (subtle) -->
+      <div class="slide__art" aria-hidden="true">
+        <svg class="art-svg" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <use href="#f-sparkle" transform="translate(1230,90) scale(0.5)" fill="#e5c574"/>
+          <use href="#f-plus-thin" transform="translate(60,680) scale(0.8)" fill="#e5c574"/>
+          <circle cx="1250" cy="660" r="9" fill="#eed8a2"/>
+          <circle cx="40" cy="120" r="8" fill="#e5c574"/>
+        </svg>
+      </div>
+
+      <button class="rag__back" data-target="4" type="button" aria-label="Back to timeline">↩&nbsp;&nbsp;Timeline</button>
+
+      <div class="rag">
+        <div class="rag__head">
+          <span class="adc-eyebrow slide__eyebrow rag__eyebrow">Early 2024 · Breakout</span>
+          <h2 class="rag__title">Simple RAG chatbots</h2>
+        </div>
+
+        <div class="rag__body">
+          <!-- Left: animated flow diagram -->
+          <div class="rag__diagram">
+            <svg class="rag-svg" viewBox="0 0 720 620" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <marker id="ragArrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M0,0 L10,5 L0,10 z" fill="#a38c52"/>
+                </marker>
+              </defs>
+
+              <!-- STEP 1: Human → action "Send Query" -->
+              <g class="rag-step" data-step="1">
+                <circle class="dia-fill" cx="120" cy="50" r="11"/>
+                <path class="dia-fill" d="M100,84 C100,62 140,62 140,84 Z"/>
+                <text class="dia-cap" x="120" y="104">Human</text>
+                <rect class="dia-box" x="270" y="33" width="180" height="54" rx="10"/>
+                <text class="dia-text" x="360" y="60">Send Query</text>
+              </g>
+
+              <!-- STEP 2: artefact "Query" + AI -->
+              <g class="rag-step" data-step="2">
+                <line class="dia-arrow" x1="360" y1="87" x2="360" y2="117" marker-end="url(#ragArrow)"/>
+                <ellipse class="dia-artefact" cx="360" cy="150" rx="88" ry="31"/>
+                <text class="dia-text" x="360" y="150">Query</text>
+                <rect class="dia-fill" x="595" y="130" width="50" height="40" rx="11"/>
+                <circle cx="610" cy="150" r="4" fill="#fff"/>
+                <circle cx="630" cy="150" r="4" fill="#fff"/>
+                <line x1="620" y1="130" x2="620" y2="118" stroke="#2a2a2a" stroke-width="3"/>
+                <circle cx="620" cy="115" r="4" fill="#2a2a2a"/>
+                <text class="dia-cap" x="620" y="190">AI</text>
+              </g>
+
+              <!-- STEP 3: actions "Fetch last 3 messages" + "Fetch context" (+ Vector DB) -->
+              <g class="rag-step" data-step="3">
+                <path class="dia-arrow" d="M322,177 C280,200 250,212 224,232" marker-end="url(#ragArrow)"/>
+                <path class="dia-arrow" d="M398,177 C440,200 452,214 473,232" marker-end="url(#ragArrow)"/>
+                <rect class="dia-box" x="108" y="235" width="205" height="60" rx="10"/>
+                <text class="dia-text" x="210" y="255">Fetch last</text>
+                <text class="dia-text" x="210" y="280">3 messages</text>
+                <rect class="dia-box" x="395" y="235" width="180" height="60" rx="10"/>
+                <text class="dia-text" x="485" y="266">Fetch context</text>
+                <ellipse class="dia-db" cx="638" cy="244" rx="38" ry="10"/>
+                <path class="dia-db" d="M600,244 v40 a38,10 0 0 0 76,0 v-40"/>
+                <ellipse class="dia-db" cx="638" cy="244" rx="38" ry="10"/>
+                <text class="dia-note" x="638" y="306">Vector DB</text>
+              </g>
+
+              <!-- STEP 4: action "Append" -->
+              <g class="rag-step" data-step="4">
+                <path class="dia-arrow" d="M210,295 C212,328 250,344 296,352" marker-end="url(#ragArrow)"/>
+                <path class="dia-arrow" d="M485,295 C483,328 444,344 424,352" marker-end="url(#ragArrow)"/>
+                <rect class="dia-box" x="225" y="350" width="270" height="62" rx="10"/>
+                <text class="dia-text" x="360" y="376">Append</text>
+                <text class="dia-note" x="360" y="398">query + last 3 msgs + context</text>
+              </g>
+
+              <!-- STEP 5: action "Generate Answer" -->
+              <g class="rag-step" data-step="5">
+                <line class="dia-arrow" x1="360" y1="412" x2="360" y2="442" marker-end="url(#ragArrow)"/>
+                <rect class="dia-box" x="258" y="444" width="204" height="54" rx="10"/>
+                <text class="dia-text" x="360" y="471">Generate Answer</text>
+              </g>
+
+              <!-- STEP 6: artefact "Answer" → Human -->
+              <g class="rag-step" data-step="6">
+                <line class="dia-arrow" x1="360" y1="498" x2="360" y2="526" marker-end="url(#ragArrow)"/>
+                <ellipse class="dia-artefact" cx="360" cy="558" rx="80" ry="30"/>
+                <text class="dia-text" x="360" y="558">Answer</text>
+                <path class="dia-arrow" d="M280,558 C240,558 210,558 178,558" marker-end="url(#ragArrow)"/>
+                <circle class="dia-fill" cx="130" cy="548" r="11"/>
+                <path class="dia-fill" d="M110,582 C110,560 150,560 150,582 Z"/>
+                <text class="dia-cap" x="130" y="602">Human</text>
+              </g>
+            </svg>
+          </div>
+
+          <!-- Right: agentic criteria checklist -->
+          <div class="rag__criteria">
+            <span class="adc-eyebrow rag__criteria-title">Agentic criteria</span>
+            <ul class="rag-crit-list">
+              <li class="rag-crit" data-status="good">
+                <span class="rag-crit__mark"></span>
+                <span class="rag-crit__label">LLM</span>
+              </li>
+              <li class="rag-crit" data-status="warn">
+                <span class="rag-crit__mark"></span>
+                <span class="rag-crit__label">State</span>
+                <span class="rag-crit__note">last three messages</span>
+              </li>
+              <li class="rag-crit" data-status="warn">
+                <span class="rag-crit__mark"></span>
+                <span class="rag-crit__label">Tool-use</span>
+                <span class="rag-crit__note">if one counts retrieval as a single tool</span>
+              </li>
+              <li class="rag-crit" data-status="bad">
+                <span class="rag-crit__mark"></span>
+                <span class="rag-crit__label">Control-loop</span>
+                <span class="rag-crit__note">running deterministically through a graph</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="rag__controls">
+          <button class="rag__btn" type="button">Begin&nbsp;&nbsp;▶</button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ── Slide 7: Breakout — LLM-based workflows ───────────────── -->
+    <section class="slide slide--rag" id="slide-7" data-index="6">
+
+      <div class="slide__logo">
+        <img src="logo.png" alt="ADC" class="adc-logo" />
+      </div>
+
+      <div class="slide__art" aria-hidden="true">
+        <svg class="art-svg" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <use href="#f-sparkle" transform="translate(1230,90) scale(0.5)" fill="#e5c574"/>
+          <use href="#f-plus-thin" transform="translate(60,680) scale(0.8)" fill="#e5c574"/>
+          <circle cx="1250" cy="660" r="9" fill="#eed8a2"/>
+          <circle cx="40" cy="120" r="8" fill="#e5c574"/>
+        </svg>
+      </div>
+
+      <button class="rag__back" data-target="4" type="button" aria-label="Back to timeline">↩&nbsp;&nbsp;Timeline</button>
+
+      <div class="rag">
+        <div class="rag__head">
+          <span class="adc-eyebrow slide__eyebrow rag__eyebrow">Late 2024 · Breakout</span>
+          <h2 class="rag__title">LLM-based workflows</h2>
+        </div>
+
+        <div class="rag__body">
+          <!-- Left: animated flow diagram -->
+          <div class="rag__diagram">
+            <svg class="rag-svg" viewBox="0 0 720 620" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <marker id="ragArrow2" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M0,0 L10,5 L0,10 z" fill="#a38c52"/>
+                </marker>
+              </defs>
+
+              <!-- STEP 1: Query artefact + Human -->
+              <g class="rag-step" data-step="1">
+                <ellipse class="dia-artefact" cx="360" cy="50" rx="82" ry="30"/>
+                <text class="dia-text" x="360" y="50">Query</text>
+                <circle class="dia-fill" cx="120" cy="40" r="11"/>
+                <path class="dia-fill" d="M100,74 C100,52 140,52 140,74 Z"/>
+                <text class="dia-cap" x="120" y="94">Human</text>
+              </g>
+
+              <!-- STEP 2: Decide (answer / refuse) action + AI -->
+              <g class="rag-step" data-step="2">
+                <line class="dia-arrow" x1="360" y1="80" x2="360" y2="108" marker-end="url(#ragArrow2)"/>
+                <rect class="dia-box" x="268" y="110" width="184" height="76" rx="10"/>
+                <text class="dia-text" x="360" y="132">Decide</text>
+                <text class="dia-note" x="360" y="154">answer or refuse</text>
+                <text class="dia-note" x="360" y="174">(hardcoded or LLM)</text>
+                <rect class="dia-fill" x="600" y="128" width="50" height="40" rx="11"/>
+                <circle cx="615" cy="148" r="4" fill="#fff"/>
+                <circle cx="635" cy="148" r="4" fill="#fff"/>
+                <line x1="625" y1="128" x2="625" y2="116" stroke="#2a2a2a" stroke-width="3"/>
+                <circle cx="625" cy="113" r="4" fill="#2a2a2a"/>
+                <text class="dia-cap" x="625" y="190">AI</text>
+              </g>
+
+              <!-- STEP 3: Refuse branch -->
+              <g class="rag-step" data-step="3">
+                <line class="dia-arrow" x1="266" y1="148" x2="182" y2="148" marker-end="url(#ragArrow2)"/>
+                <ellipse class="dia-artefact" cx="120" cy="148" rx="58" ry="25"/>
+                <text class="dia-text" x="120" y="148">Refuse</text>
+              </g>
+
+              <!-- STEP 4: How to answer action + tools -->
+              <g class="rag-step" data-step="4">
+                <line class="dia-arrow" x1="360" y1="186" x2="360" y2="250" marker-end="url(#ragArrow2)"/>
+                <rect class="dia-box" x="265" y="252" width="190" height="56" rx="10"/>
+                <text class="dia-text" x="360" y="280">How to answer</text>
+                <line class="dia-line" x1="455" y1="282" x2="512" y2="282"/>
+                <rect class="dia-tools" x="512" y="242" width="190" height="82" rx="10"/>
+                <!-- Memory (chip icon) -->
+                <rect x="560" y="252" width="12" height="12" rx="2" fill="none" stroke="#7e6c40" stroke-width="2"/>
+                <line x1="556" y1="255" x2="560" y2="255" stroke="#7e6c40" stroke-width="2"/>
+                <line x1="556" y1="261" x2="560" y2="261" stroke="#7e6c40" stroke-width="2"/>
+                <line x1="572" y1="255" x2="576" y2="255" stroke="#7e6c40" stroke-width="2"/>
+                <line x1="572" y1="261" x2="576" y2="261" stroke="#7e6c40" stroke-width="2"/>
+                <text class="dia-tool" x="586" y="258">Memory</text>
+                <!-- Vector DB (cylinder icon) -->
+                <ellipse cx="566" cy="278" rx="7" ry="2.5" fill="none" stroke="#7e6c40" stroke-width="2"/>
+                <path d="M559,278 V288 a7,2.5 0 0 0 14,0 V278" fill="none" stroke="#7e6c40" stroke-width="2"/>
+                <text class="dia-tool" x="586" y="283">Vector DB</text>
+                <!-- Web search (magnifier icon) -->
+                <circle cx="564" cy="306" r="5" fill="none" stroke="#7e6c40" stroke-width="2"/>
+                <line x1="568" y1="310" x2="573" y2="315" stroke="#7e6c40" stroke-width="2"/>
+                <text class="dia-tool" x="586" y="308">Web search</text>
+              </g>
+
+              <!-- STEP 5: Answer artefact -->
+              <g class="rag-step" data-step="5">
+                <line class="dia-arrow" x1="360" y1="308" x2="360" y2="338" marker-end="url(#ragArrow2)"/>
+                <ellipse class="dia-artefact" cx="360" cy="368" rx="78" ry="28"/>
+                <text class="dia-text" x="360" y="368">Answer</text>
+              </g>
+
+              <!-- STEP 6: Guardrails Check action + rewrite loop -->
+              <g class="rag-step" data-step="6">
+                <line class="dia-arrow" x1="360" y1="396" x2="360" y2="428" marker-end="url(#ragArrow2)"/>
+                <rect class="dia-box" x="262" y="430" width="196" height="56" rx="10"/>
+                <text class="dia-text" x="360" y="458">Guardrails Check</text>
+                <path class="dia-arrow" d="M260,452 C150,420 150,322 263,285" marker-end="url(#ragArrow2)"/>
+                <!-- Variants annotation (no outline) -->
+                <text class="dia-vtitle" x="500" y="436">Variants</text>
+                <text class="dia-bullet" x="500" y="462">• Decision hardcoded</text>
+                <text class="dia-bullet" x="500" y="484">• Decision LLM</text>
+                <text class="dia-bullet" x="500" y="506">• + rewrite &amp; accept</text>
+              </g>
+
+              <!-- STEP 7: Answer to human artefact -->
+              <g class="rag-step" data-step="7">
+                <line class="dia-arrow" x1="360" y1="486" x2="360" y2="520" marker-end="url(#ragArrow2)"/>
+                <ellipse class="dia-artefact" cx="360" cy="554" rx="98" ry="30"/>
+                <text class="dia-text" x="360" y="554">Answer to human</text>
+                <line class="dia-arrow" x1="262" y1="554" x2="178" y2="554" marker-end="url(#ragArrow2)"/>
+                <circle class="dia-fill" cx="120" cy="544" r="11"/>
+                <path class="dia-fill" d="M100,578 C100,556 140,556 140,578 Z"/>
+                <text class="dia-cap" x="120" y="598">Human</text>
+              </g>
+            </svg>
+          </div>
+
+          <!-- Right: agentic criteria checklist -->
+          <div class="rag__criteria">
+            <span class="adc-eyebrow rag__criteria-title">Agentic criteria</span>
+            <ul class="rag-crit-list">
+              <li class="rag-crit" data-status="good">
+                <span class="rag-crit__mark"></span>
+                <span class="rag-crit__label">LLM</span>
+                <span class="rag-crit__note">decides and generates</span>
+              </li>
+              <li class="rag-crit" data-status="warn">
+                <span class="rag-crit__mark"></span>
+                <span class="rag-crit__label">State</span>
+                <span class="rag-crit__note">memory, but still shallow</span>
+              </li>
+              <li class="rag-crit" data-status="good">
+                <span class="rag-crit__mark"></span>
+                <span class="rag-crit__label">Tool-use</span>
+                <span class="rag-crit__note">memory · vector DB · web search</span>
+              </li>
+              <li class="rag-crit" data-status="warn">
+                <span class="rag-crit__mark"></span>
+                <span class="rag-crit__label">Control-loop</span>
+                <span class="rag-crit__note">a guardrails rewrite loop — but mostly pre-wired</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="rag__controls">
+          <button class="rag__btn" type="button">Begin&nbsp;&nbsp;▶</button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ── Slide (breakout): Design moves to the forefront ─────────── -->
+    <section class="slide slide--rag slide--video" id="slide-design" data-index="7">
+
+      <div class="slide__logo">
+        <img src="logo.png" alt="ADC" class="adc-logo" />
+      </div>
+
+      <div class="slide__art" aria-hidden="true">
+        <svg class="art-svg" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <use href="#f-sparkle" transform="translate(1230,90) scale(0.5)" fill="#e5c574"/>
+          <use href="#f-plus-thin" transform="translate(60,680) scale(0.8)" fill="#e5c574"/>
+          <circle cx="1250" cy="660" r="9" fill="#eed8a2"/>
+          <circle cx="40" cy="120" r="8" fill="#e5c574"/>
+        </svg>
+      </div>
+
+      <button class="rag__back" data-target="4" type="button" aria-label="Back to timeline">↩&nbsp;&nbsp;Timeline</button>
+
+      <div class="rag">
+        <div class="rag__head">
+          <span class="adc-eyebrow slide__eyebrow rag__eyebrow">~2025 · Breakout</span>
+          <h2 class="rag__title">Design moves to the forefront</h2>
+        </div>
+
+        <div class="rag__body rag__body--video">
+          <!-- Left: looping demo clip -->
+          <div class="rag__video">
+            <video class="rag-video" src="RegBot.mov" autoplay muted loop playsinline controls preload="auto"></video>
+          </div>
+
+          <!-- Right: agentic criteria checklist -->
+          <div class="rag__criteria">
+            <span class="adc-eyebrow rag__criteria-title">Agentic criteria</span>
+            <ul class="rag-crit-list">
+              <li class="rag-crit" data-status="good">
+                <span class="rag-crit__mark"></span>
+                <span class="rag-crit__label">LLM</span>
+                <span class="rag-crit__note">decides and generates</span>
+              </li>
+              <li class="rag-crit" data-status="warn">
+                <span class="rag-crit__mark"></span>
+                <span class="rag-crit__label">State</span>
+                <span class="rag-crit__note">session memory, still shallow</span>
+              </li>
+              <li class="rag-crit" data-status="warn">
+                <span class="rag-crit__mark"></span>
+                <span class="rag-crit__label">Tool-use</span>
+                <span class="rag-crit__note">a handful of wired-in tools</span>
+              </li>
+              <li class="rag-crit" data-status="bad">
+                <span class="rag-crit__mark"></span>
+                <span class="rag-crit__label">Control-loop</span>
+                <span class="rag-crit__note">still a fixed, pre-wired flow</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="rag__controls">
+          <button class="rag__btn" type="button">Agentic criteria&nbsp;&nbsp;▶</button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ── Slide 8: Breakout — Truly agentic systems ─────────────── -->
+    <section class="slide slide--rag" id="slide-8" data-index="8">
+
+      <div class="slide__logo">
+        <img src="logo.png" alt="ADC" class="adc-logo" />
+      </div>
+
+      <div class="slide__art" aria-hidden="true">
+        <svg class="art-svg" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <use href="#f-sparkle" transform="translate(1230,90) scale(0.5)" fill="#e5c574"/>
+          <use href="#f-plus-thin" transform="translate(60,680) scale(0.8)" fill="#e5c574"/>
+          <circle cx="1250" cy="660" r="9" fill="#eed8a2"/>
+          <circle cx="40" cy="120" r="8" fill="#e5c574"/>
+        </svg>
+      </div>
+
+      <button class="rag__back" data-target="4" type="button" aria-label="Back to timeline">↩&nbsp;&nbsp;Timeline</button>
+
+      <div class="rag">
+        <div class="rag__head">
+          <span class="adc-eyebrow slide__eyebrow rag__eyebrow">~Now · Breakout</span>
+          <h2 class="rag__title">Truly agentic systems</h2>
+        </div>
+
+        <div class="rag__body">
+          <!-- Left: animated flow diagram -->
+          <div class="rag__diagram">
+            <svg class="rag-svg" viewBox="0 0 740 820" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <marker id="ragArrow3" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M0,0 L10,5 L0,10 z" fill="#a38c52"/>
+                </marker>
+              </defs>
+
+              <!-- STEP 1: Human + Send Query + Upload docs (connected) -->
+              <g class="rag-step" data-step="1">
+                <circle class="dia-fill" cx="150" cy="62" r="12"/>
+                <path class="dia-fill" d="M128,98 C128,74 172,74 172,98 Z"/>
+                <text class="dia-cap" x="150" y="118">Human</text>
+                <line class="dia-arrow" x1="172" y1="74" x2="240" y2="74" marker-end="url(#ragArrow3)"/>
+                <rect class="dia-box" x="240" y="52" width="180" height="44" rx="10"/>
+                <text class="dia-text" x="330" y="74">Send Query</text>
+                <rect class="dia-box" x="40" y="150" width="160" height="44" rx="10"/>
+                <text class="dia-text" x="120" y="172">Upload docs</text>
+                <line class="dia-arrow" x1="200" y1="172" x2="240" y2="172" marker-end="url(#ragArrow3)"/>
+              </g>
+
+              <!-- STEP 2: Planning + AI icon + tool bracket -->
+              <g class="rag-step" data-step="2">
+                <line class="dia-arrow" x1="330" y1="96" x2="330" y2="150" marker-end="url(#ragArrow3)"/>
+                <rect class="dia-box" x="240" y="150" width="180" height="44" rx="10"/>
+                <text class="dia-text" x="330" y="172">Planning</text>
+                <rect class="dia-fill" x="638" y="62" width="40" height="32" rx="9"/>
+                <circle cx="650" cy="78" r="3.5" fill="#fff"/>
+                <circle cx="666" cy="78" r="3.5" fill="#fff"/>
+                <line x1="658" y1="62" x2="658" y2="51" stroke="#2a2a2a" stroke-width="2.5"/>
+                <circle cx="658" cy="48" r="3.5" fill="#2a2a2a"/>
+                <text class="dia-cap" x="658" y="112">AI</text>
+                <path class="dia-brace" d="M437,150 Q431,150 431,158 L431,172 Q431,180 423,180 Q431,180 431,188 L431,194 Q431,202 437,202"/>
+                <rect class="dia-tile" x="450" y="150" width="120" height="38" rx="8"/>
+                <text class="dia-tile-text" x="510" y="169">AskQuestion</text>
+                <rect class="dia-tile" x="578" y="150" width="138" height="38" rx="8"/>
+                <text class="dia-tile-text" x="647" y="169">VerifyResources</text>
+                <rect class="dia-tile" x="450" y="196" width="120" height="38" rx="8"/>
+                <text class="dia-tile-text" x="510" y="215">PresentPlan</text>
+                <rect class="dia-tile" x="578" y="196" width="138" height="38" rx="8"/>
+                <text class="dia-tile-text" x="647" y="215">…</text>
+              </g>
+
+              <!-- STEP 3: Plan artefact (result of Planning) -->
+              <g class="rag-step" data-step="3">
+                <line class="dia-arrow" x1="330" y1="194" x2="330" y2="248" marker-end="url(#ragArrow3)"/>
+                <ellipse class="dia-artefact" cx="330" cy="274" rx="74" ry="26"/>
+                <text class="dia-text" x="330" y="274">Plan</text>
+              </g>
+
+              <!-- STEP 4: Planning accept / reject — accept→Execution, reject→Planning (left loop) -->
+              <g class="rag-step" data-step="4">
+                <!-- Spine arrow from Plan oval to accept pill -->
+                <line class="dia-arrow" x1="330" y1="300" x2="330" y2="354" marker-end="url(#ragArrow3)"/>
+                <!-- T-junction branch LEFT to reject -->
+                <line class="dia-line" x1="330" y1="327" x2="190" y2="327"/>
+                <line class="dia-arrow" x1="190" y1="327" x2="190" y2="354" marker-end="url(#ragArrow3)"/>
+                <!-- Accept pill (on spine x=330) -->
+                <rect class="dia-pill" x="262" y="354" width="136" height="34" rx="17"/>
+                <circle class="dia-glyph" cx="276" cy="366" r="3.2"/>
+                <path class="dia-glyph" d="M271,375 C271,369 281,369 281,375 Z"/>
+                <text class="dia-slash" x="290" y="372">/</text>
+                <rect class="dia-glyph" x="298" y="366" width="10" height="9" rx="2"/>
+                <circle cx="301" cy="370.5" r="1.3" fill="#fff"/>
+                <circle cx="305" cy="370.5" r="1.3" fill="#fff"/>
+                <text class="dia-pill-text" x="316" y="371">accept</text>
+                <!-- Reject pill (left branch, center x=190) -->
+                <rect class="dia-pill" x="126" y="354" width="128" height="34" rx="17"/>
+                <circle class="dia-glyph" cx="140" cy="366" r="3.2"/>
+                <path class="dia-glyph" d="M135,375 C135,369 145,369 145,375 Z"/>
+                <text class="dia-slash" x="154" y="372">/</text>
+                <rect class="dia-glyph" x="162" y="366" width="10" height="9" rx="2"/>
+                <circle cx="165" cy="370.5" r="1.3" fill="#fff"/>
+                <circle cx="169" cy="370.5" r="1.3" fill="#fff"/>
+                <text class="dia-pill-text" x="180" y="371">reject</text>
+                <!-- Reject loop: down → far left → up above elements → right → into Planning top -->
+                <path class="dia-arrow" d="M190,388 V412 H30 V130 H330 V150" marker-end="url(#ragArrow3)"/>
+                <!-- Accept → Execution -->
+                <line class="dia-arrow" x1="330" y1="388" x2="330" y2="442" marker-end="url(#ragArrow3)"/>
+              </g>
+
+              <!-- STEP 5: Execution + tool bracket -->
+              <g class="rag-step" data-step="5">
+                <rect class="dia-box" x="240" y="442" width="180" height="44" rx="10"/>
+                <text class="dia-text" x="330" y="464">Execution</text>
+                <path class="dia-brace" d="M437,442 Q431,442 431,450 L431,464 Q431,472 423,472 Q431,472 431,480 L431,486 Q431,494 437,494"/>
+                <rect class="dia-tile" x="450" y="442" width="120" height="38" rx="8"/>
+                <text class="dia-tile-text" x="510" y="461">MCP – ProductInfo</text>
+                <rect class="dia-tile" x="578" y="442" width="138" height="38" rx="8"/>
+                <text class="dia-tile-text" x="647" y="461">MCP – CustomerInfo</text>
+                <rect class="dia-tile" x="450" y="488" width="120" height="38" rx="8"/>
+                <text class="dia-tile-text" x="510" y="507">ContactHistory</text>
+                <rect class="dia-tile" x="578" y="488" width="138" height="38" rx="8"/>
+                <text class="dia-tile-text" x="647" y="507">…</text>
+              </g>
+
+              <!-- STEP 6: Draft artefact -->
+              <g class="rag-step" data-step="6">
+                <line class="dia-arrow" x1="330" y1="486" x2="330" y2="540" marker-end="url(#ragArrow3)"/>
+                <ellipse class="dia-artefact" cx="330" cy="566" rx="74" ry="26"/>
+                <text class="dia-text" x="330" y="566">Draft</text>
+              </g>
+
+              <!-- STEP 7: accept (straight down) / reject (left branch + left loop) -->
+              <g class="rag-step" data-step="7">
+                <!-- Spine arrow from Draft to accept pill -->
+                <line class="dia-arrow" x1="330" y1="592" x2="330" y2="646" marker-end="url(#ragArrow3)"/>
+                <!-- T-junction branch LEFT to reject — bar is high up for visible arrowhead -->
+                <line class="dia-line" x1="330" y1="619" x2="190" y2="619"/>
+                <line class="dia-arrow" x1="190" y1="619" x2="190" y2="646" marker-end="url(#ragArrow3)"/>
+                <!-- Accept pill (on spine x=330) -->
+                <rect class="dia-pill" x="262" y="646" width="136" height="34" rx="17"/>
+                <circle class="dia-glyph" cx="276" cy="658" r="3.2"/>
+                <path class="dia-glyph" d="M271,667 C271,661 281,661 281,667 Z"/>
+                <text class="dia-slash" x="290" y="664">/</text>
+                <rect class="dia-glyph" x="298" y="658" width="10" height="9" rx="2"/>
+                <circle cx="301" cy="662.5" r="1.3" fill="#fff"/>
+                <circle cx="305" cy="662.5" r="1.3" fill="#fff"/>
+                <text class="dia-pill-text" x="316" y="663">accept</text>
+                <!-- Reject pill (left branch, center x=190) -->
+                <rect class="dia-pill" x="126" y="646" width="128" height="34" rx="17"/>
+                <circle class="dia-glyph" cx="140" cy="658" r="3.2"/>
+                <path class="dia-glyph" d="M135,667 C135,661 145,661 145,667 Z"/>
+                <text class="dia-slash" x="154" y="664">/</text>
+                <rect class="dia-glyph" x="162" y="658" width="10" height="9" rx="2"/>
+                <circle cx="165" cy="662.5" r="1.3" fill="#fff"/>
+                <circle cx="169" cy="662.5" r="1.3" fill="#fff"/>
+                <text class="dia-pill-text" x="180" y="663">reject</text>
+                <!-- Reject loop: left edge → far left → up → Execution left edge -->
+                <path class="dia-arrow" d="M126,663 H30 V464 H240" marker-end="url(#ragArrow3)"/>
+              </g>
+
+              <!-- STEP 8: Result oval (straight down from accept) + Human aligned left -->
+              <g class="rag-step" data-step="8">
+                <!-- Accept pill bottom → straight down → Result oval -->
+                <line class="dia-arrow" x1="330" y1="680" x2="330" y2="734" marker-end="url(#ragArrow3)"/>
+                <ellipse class="dia-artefact" cx="330" cy="760" rx="78" ry="26"/>
+                <text class="dia-text" x="330" y="760">Result</text>
+                <!-- Arrow from Result oval left edge → Human (horizontally aligned) -->
+                <line class="dia-arrow" x1="252" y1="760" x2="172" y2="760" marker-end="url(#ragArrow3)"/>
+                <!-- Human icon aligned at same Y as Result oval -->
+                <circle class="dia-fill" cx="150" cy="748" r="12"/>
+                <path class="dia-fill" d="M128,784 C128,760 172,760 172,784 Z"/>
+                <text class="dia-cap" x="150" y="804">Human</text>
+              </g>
+            </svg>
+          </div>
+
+          <!-- Right: agentic criteria checklist -->
+          <div class="rag__criteria">
+            <span class="adc-eyebrow rag__criteria-title">Agentic criteria</span>
+            <ul class="rag-crit-list">
+              <li class="rag-crit" data-status="good">
+                <span class="rag-crit__mark"></span>
+                <span class="rag-crit__label">LLM</span>
+                <span class="rag-crit__note">plans, reasons and decides</span>
+              </li>
+              <li class="rag-crit" data-status="good">
+                <span class="rag-crit__mark"></span>
+                <span class="rag-crit__label">State</span>
+                <span class="rag-crit__note">memory, documents, evolving plan</span>
+              </li>
+              <li class="rag-crit" data-status="good">
+                <span class="rag-crit__mark"></span>
+                <span class="rag-crit__label">Tool-use</span>
+                <span class="rag-crit__note">retrieve · generate · verify</span>
+              </li>
+              <li class="rag-crit" data-status="good">
+                <span class="rag-crit__mark"></span>
+                <span class="rag-crit__label">Control-loop</span>
+                <span class="rag-crit__note">plans, acts, checks and retries on its own</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="rag__controls">
+          <button class="rag__btn" type="button">Begin&nbsp;&nbsp;▶</button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ── Slide (breakout): Looking ahead ───────────────────────── -->
+    <section class="slide slide--ahead" id="slide-ahead" data-index="9">
+
+      <div class="slide__logo">
+        <img src="logo.png" alt="ADC" class="adc-logo" />
+      </div>
+
+      <div class="slide__art" aria-hidden="true">
+        <svg class="art-svg" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <use href="#f-sparkle" transform="translate(60,90) scale(0.5)" fill="#e5c574"/>
+          <use href="#f-plus-thin" transform="translate(1210,660) scale(0.8)" fill="#e5c574"/>
+          <circle cx="40" cy="660" r="9" fill="#eed8a2"/>
+        </svg>
+      </div>
+
+      <button class="rag__back" data-target="4" type="button" aria-label="Back to timeline">↩&nbsp;&nbsp;Timeline</button>
+
+      <div class="rag">
+        <div class="rag__head">
+          <span class="adc-eyebrow slide__eyebrow rag__eyebrow">Looking ahead · Breakout</span>
+          <h2 class="rag__title">What's on the horizon</h2>
+        </div>
+
+        <div class="ahead__stage">
+          <svg class="ahead-svg" viewBox="0 0 1120 600" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="aheadSun" cx="50%" cy="100%" r="100%">
+                <stop offset="0%" stop-color="#fff347"/>
+                <stop offset="55%" stop-color="#ead190"/>
+                <stop offset="100%" stop-color="#e5c574"/>
+              </radialGradient>
+            </defs>
+
+            <!-- horizon -->
+            <line class="ahead-horizon-line" x1="0" y1="302" x2="1120" y2="302"/>
+
+            <!-- setting sun at the vanishing point -->
+            <g class="ahead-sun">
+              <circle cx="630" cy="302" r="80" fill="#f7edd4" opacity="0.55"/>
+              <g class="ahead-rays" stroke="#e5c574" stroke-width="3" stroke-linecap="round">
+                <line x1="630" y1="178" x2="630" y2="202"/>
+                <line x1="554" y1="212" x2="572" y2="228"/>
+                <line x1="706" y1="212" x2="688" y2="228"/>
+                <line x1="524" y1="282" x2="548" y2="286"/>
+                <line x1="736" y1="282" x2="712" y2="286"/>
+              </g>
+              <path d="M570,302 A60,60 0 0 1 690,302 Z" fill="url(#aheadSun)"/>
+            </g>
+
+            <!-- road to the horizon -->
+            <path class="ahead-road" d="M70,560 L350,560 L632,302 L628,302 Z"/>
+            <line class="ahead-road-mid" x1="210" y1="558" x2="630" y2="304"/>
+
+            <!-- things waiting on the horizon -->
+            <g class="ahead-horizon">
+              <g class="ahead-hz" transform="translate(150,86)">
+                <g class="ahead-ico-g">
+                  <line class="ahead-ico" x1="0" y1="-22" x2="-20" y2="14"/>
+                  <line class="ahead-ico" x1="0" y1="-22" x2="20" y2="14"/>
+                  <line class="ahead-ico" x1="-20" y1="14" x2="20" y2="14"/>
+                  <circle class="ahead-ico-fill" cx="0" cy="-22" r="12"/>
+                  <circle class="ahead-ico-fill" cx="-20" cy="14" r="12"/>
+                  <circle class="ahead-ico-fill" cx="20" cy="14" r="12"/>
+                  <circle cx="0" cy="-22" r="3" fill="#a38c52"/>
+                  <circle cx="-20" cy="14" r="3" fill="#a38c52"/>
+                  <circle cx="20" cy="14" r="3" fill="#a38c52"/>
+                </g>
+                <text class="ahead-hz-text" text-anchor="middle" x="0" y="56">Multi-agent<tspan x="0" dy="22">systems</tspan></text>
+              </g>
+
+              <g class="ahead-hz" transform="translate(420,86)">
+                <g class="ahead-ico-g">
+                  <path class="ahead-ico-fill" d="M-22,-26 A22,8 0 0 1 22,-26 V14 A22,8 0 0 1 -22,14 Z"/>
+                  <path class="ahead-ico" d="M-22,-26 A22,8 0 0 0 22,-26" fill="none"/>
+                  <path class="ahead-ico" d="M-22,-8 A22,8 0 0 0 22,-8" fill="none"/>
+                  <circle class="ahead-ico-fill" cx="16" cy="18" r="11"/>
+                  <line class="ahead-ico" x1="16" y1="18" x2="16" y2="12"/>
+                  <line class="ahead-ico" x1="16" y1="18" x2="21" y2="20"/>
+                </g>
+                <text class="ahead-hz-text" text-anchor="middle" x="0" y="56">Long-term memory &amp;<tspan x="0" dy="22">cross-system memory</tspan></text>
+              </g>
+
+              <g class="ahead-hz" transform="translate(690,86)">
+                <g class="ahead-ico-g">
+                  <line class="ahead-ico" x1="-18" y1="-26" x2="18" y2="-26"/>
+                  <line class="ahead-ico" x1="-18" y1="26" x2="18" y2="26"/>
+                  <path class="ahead-ico-fill" d="M-16,-24 H16 L0,0 Z"/>
+                  <path class="ahead-ico-fill" d="M-16,24 H16 L0,0 Z"/>
+                </g>
+                <text class="ahead-hz-text" text-anchor="middle" x="0" y="56">Longer time<tspan x="0" dy="22">horizons</tspan></text>
+              </g>
+
+              <g class="ahead-hz" transform="translate(958,86)">
+                <g class="ahead-ico-g">
+                  <rect class="ahead-ico-fill" x="-22" y="-26" width="44" height="52" rx="7"/>
+                  <rect class="ahead-ico-fill" x="-6" y="-32" width="12" height="9" rx="2"/>
+                  <circle class="ahead-ico-fill" cx="0" cy="-8" r="7"/>
+                  <path class="ahead-ico" d="M-11,12 C-11,2 11,2 11,12" fill="none"/>
+                  <circle class="ahead-ico" cx="26" cy="20" r="7" fill="none"/>
+                  <circle class="ahead-ico" cx="37" cy="24" r="7" fill="none"/>
+                </g>
+                <text class="ahead-hz-text" text-anchor="middle" x="0" y="56">Identity &amp;<tspan x="0" dy="22">Integrations</tspan></text>
+              </g>
+            </g>
+
+            <!-- roadblocks (revealed on first click) -->
+            <g class="ahead-block" data-block="0" transform="translate(336,482) scale(0.82)">
+              <line class="ahead-post" x1="-34" y1="0" x2="-34" y2="-40"/>
+              <line class="ahead-post" x1="34" y1="0" x2="34" y2="-40"/>
+              <rect class="ahead-bar" x="-46" y="-54" width="92" height="20" rx="3"/>
+              <line class="ahead-stripe" x1="-40" y1="-36" x2="-24" y2="-52"/>
+              <line class="ahead-stripe" x1="-16" y1="-36" x2="0" y2="-52"/>
+              <line class="ahead-stripe" x1="8" y1="-36" x2="24" y2="-52"/>
+              <line class="ahead-stripe" x1="32" y1="-36" x2="44" y2="-49"/>
+            </g>
+            <g class="ahead-block" data-block="1" transform="translate(437,420) scale(0.676)">
+              <line class="ahead-post" x1="-34" y1="0" x2="-34" y2="-40"/>
+              <line class="ahead-post" x1="34" y1="0" x2="34" y2="-40"/>
+              <rect class="ahead-bar" x="-46" y="-54" width="92" height="20" rx="3"/>
+              <line class="ahead-stripe" x1="-40" y1="-36" x2="-24" y2="-52"/>
+              <line class="ahead-stripe" x1="-16" y1="-36" x2="0" y2="-52"/>
+              <line class="ahead-stripe" x1="8" y1="-36" x2="24" y2="-52"/>
+              <line class="ahead-stripe" x1="32" y1="-36" x2="44" y2="-49"/>
+            </g>
+            <g class="ahead-block" data-block="2" transform="translate(538,357) scale(0.532)">
+              <line class="ahead-post" x1="-34" y1="0" x2="-34" y2="-40"/>
+              <line class="ahead-post" x1="34" y1="0" x2="34" y2="-40"/>
+              <rect class="ahead-bar" x="-46" y="-54" width="92" height="20" rx="3"/>
+              <line class="ahead-stripe" x1="-40" y1="-36" x2="-24" y2="-52"/>
+              <line class="ahead-stripe" x1="-16" y1="-36" x2="0" y2="-52"/>
+              <line class="ahead-stripe" x1="8" y1="-36" x2="24" y2="-52"/>
+              <line class="ahead-stripe" x1="32" y1="-36" x2="44" y2="-49"/>
+            </g>
+
+            <!-- roadblock labels — aligned with each block's top, leader line + dot, set off to the right -->
+            <g class="ahead-block-label" data-block="0">
+              <circle class="ahead-lead-dot" cx="374" cy="438" r="3.5"/>
+              <line class="ahead-lead" x1="374" y1="438" x2="722" y2="438"/>
+              <text class="ahead-label-text" x="730" y="451"><tspan class="ahead-key">Costs</tspan><tspan class="ahead-rest"> - Domain models, context</tspan><tspan class="ahead-rest" x="730" dy="25">engineering, local hosting</tspan></text>
+            </g>
+            <g class="ahead-block-label" data-block="1">
+              <circle class="ahead-lead-dot" cx="468" cy="384" r="3.5"/>
+              <line class="ahead-lead" x1="468" y1="384" x2="722" y2="384"/>
+              <text class="ahead-label-text" x="730" y="397"><tspan class="ahead-key">ROI</tspan><tspan class="ahead-rest"> - Measurement</tspan></text>
+            </g>
+            <g class="ahead-block-label" data-block="2">
+              <circle class="ahead-lead-dot" cx="563" cy="328" r="3.5"/>
+              <line class="ahead-lead" x1="563" y1="328" x2="722" y2="328"/>
+              <text class="ahead-label-text" x="730" y="341"><tspan class="ahead-key">Trust</tspan><tspan class="ahead-rest"> - Reliability &amp; Observability</tspan></text>
+            </g>
+
+            <!-- the runner -->
+            <g class="ahead-runner" transform="translate(231,547) scale(0.97)">
+              <g class="ahead-runner__hop">
+                <g class="ahead-runner__body">
+                  <circle class="ahead-fig--head" cx="0" cy="-78" r="11"/>
+                  <line class="ahead-fig" x1="0" y1="-67" x2="0" y2="-30"/>
+                  <g class="ahead-arms ahead-arms--run">
+                    <path class="ahead-fig ahead-arm-front" d="M0,-58 L17,-66"/>
+                    <path class="ahead-fig ahead-arm-back" d="M0,-58 L-16,-49"/>
+                  </g>
+                  <g class="ahead-arms ahead-arms--cheer">
+                    <path class="ahead-fig" d="M0,-58 L-15,-80"/>
+                    <path class="ahead-fig" d="M0,-58 L15,-80"/>
+                  </g>
+                  <path class="ahead-fig ahead-leg-front" d="M0,-30 L16,-2"/>
+                  <path class="ahead-fig ahead-leg-back" d="M0,-30 L-14,-2"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <div class="rag__controls">
+          <button class="rag__btn ahead__btn" type="button">Begin&nbsp;&nbsp;▶</button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ── Slide 9: Closing ──────────────────────────────────────── -->
+    <section class="slide" id="slide-9" data-index="10">
+
+      <div class="slide__logo">
+        <img src="logo.png" alt="ADC" class="adc-logo" />
+      </div>
+
+      <div class="slide__art" aria-hidden="true">
+        <svg class="art-svg" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <!-- Hero metaball cluster, upper-right -->
+          <g filter="url(#goo)" fill="#a187ff">
+            <circle cx="1080" cy="250" r="52"/>
+            <circle cx="1158" cy="226" r="34"/>
+            <circle cx="1150" cy="166" r="20"/>
+            <circle cx="1230" cy="262" r="28"/>
+            <circle cx="1086" cy="320" r="18"/>
+          </g>
+          <!-- Lower-right metaball cluster -->
+          <g filter="url(#goo)" fill="#a187ff">
+            <circle cx="1100" cy="560" r="50"/>
+            <circle cx="1172" cy="540" r="30"/>
+            <circle cx="1096" cy="492" r="16"/>
+            <circle cx="1180" cy="618" r="20"/>
+          </g>
+          <!-- Accent blobs -->
+          <circle cx="1116" cy="138" r="48" fill="#7260b5"/>
+          <use href="#f-diamond" transform="translate(986,396) rotate(45) scale(0.92)" fill="#a187ff"/>
+          <circle cx="1262" cy="400" r="34" fill="#c0afff"/>
+          <!-- Ring / donut -->
+          <circle cx="918" cy="300" r="20" fill="none" stroke="#a187ff" stroke-width="13"/>
+          <!-- Pills / dashes -->
+          <rect x="850" y="220" width="60" height="22" rx="11" fill="#a187ff"/>
+          <rect x="930" y="220" width="30" height="22" rx="11" fill="#a187ff"/>
+          <rect x="1020" y="430" width="80" height="22" rx="11" fill="#c0afff"/>
+          <!-- Sparkles -->
+          <use href="#f-sparkle" transform="translate(960,470) scale(0.6)" fill="#c0afff"/>
+          <use href="#f-sparkle" transform="translate(1248,540) scale(0.42)" fill="#a187ff"/>
+          <use href="#f-sparkle" transform="translate(880,560) scale(0.5)" fill="#7260b5"/>
+          <!-- Plus marks -->
+          <use href="#f-plus" transform="translate(1252,150) scale(0.6)" fill="#a187ff"/>
+          <use href="#f-plus-thin" transform="translate(840,400) scale(1)" fill="#7260b5"/>
+          <!-- Dots -->
+          <circle cx="980" cy="250" r="12" fill="#a187ff"/>
+          <circle cx="1010" cy="360" r="8" fill="#c0afff"/>
+          <circle cx="940" cy="650" r="14" fill="#7260b5"/>
+        </svg>
+      </div>
+
+      <div class="slide__content">
+        <span class="adc-eyebrow slide__eyebrow">Thank you</span>
+        <h2 class="slide__title slide__title--closing">Let's build<br>what's next.</h2>
+        <p class="slide__subtitle slide__subtitle--muted">adc-consulting.com</p>
+      </div>
+
+    </section>
+
+  </div><!-- /deck -->
+
+  <!-- ── Bottom navigation ───────────────────────────────────────── -->
+  <nav class="slide-nav" role="navigation" aria-label="Slide navigation">
+    <button class="slide-nav__btn slide-nav__btn--active" data-target="0" aria-label="Go to slide 1">
+      <span class="slide-nav__pip"></span>
+      <span class="slide-nav__label">Intro</span>
+    </button>
+    <button class="slide-nav__btn" data-target="1" aria-label="Go to slide 2">
+      <span class="slide-nav__pip"></span>
+      <span class="slide-nav__label">Vibe-o-meter</span>
+    </button>
+    <button class="slide-nav__btn" data-target="2" aria-label="Go to slide 3">
+      <span class="slide-nav__pip"></span>
+      <span class="slide-nav__label">Influence</span>
+    </button>
+    <button class="slide-nav__btn" data-target="3" aria-label="Go to slide 4">
+      <span class="slide-nav__pip"></span>
+      <span class="slide-nav__label">Definition</span>
+    </button>
+    <button class="slide-nav__btn" data-target="4" aria-label="Go to slide 5">
+      <span class="slide-nav__pip"></span>
+      <span class="slide-nav__label">Timeline</span>
+    </button>
+    <button class="slide-nav__btn" data-target="10" aria-label="Go to closing">
+      <span class="slide-nav__pip"></span>
+      <span class="slide-nav__label">Close</span>
+    </button>
+
+    <div class="slide-nav__arrows">
+      <button class="slide-nav__arrow" id="prev" aria-label="Previous slide">&#8592;</button>
+      <button class="slide-nav__arrow" id="next" aria-label="Next slide">&#8594;</button>
+    </div>
+  </nav>
+
+  <p class="key-hint">← → arrow keys to navigate</p>
+  <script src="presentation.js"></script>
+  <script src="vibe.js"></script>
+  <script src="eq.js"></script>
+  <script src="rag.js"></script>
+  <script src="ahead.js"></script>
+  <script src="video.js"></script>
+</body>
+</html>

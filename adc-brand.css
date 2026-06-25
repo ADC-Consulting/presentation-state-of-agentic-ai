@@ -1,0 +1,452 @@
+/*
+  ADC Brand CSS
+  Based on ADC Brand Guidelines v1.1, November 2025.
+  Notes:
+  - Primary licensed typeface: Ease. Add your hosted font files in @font-face if licensed.
+  - Open-source fallback specified in the guidelines: DM Sans. Last-resort system fallback: Segoe UI.
+*/
+
+/* Optional: uncomment and point to licensed Ease files.
+@font-face {
+  font-family: "Ease Display";
+  src: url("/fonts/EaseDisplay-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Ease SemiDisplay";
+  src: url("/fonts/EaseSemiDisplay-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Ease SemiDisplay";
+  src: url("/fonts/EaseSemiDisplay-Semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+*/
+
+:root {
+  /* Core palette */
+  --adc-black: #000000;
+  --adc-white: #ffffff;
+  --adc-violet: #a187ff;
+  --adc-pink: #ff9bfc;
+  --adc-teal: #2bebcb;
+  --adc-green: #58eb81;
+  --adc-yellow: #fff347;
+  --adc-gold: #e5c574;
+
+  /* Secondary palette: pink */
+  --adc-pink-100: #ffe0fe;
+  --adc-pink-200: #ffd1fe;
+  --adc-pink-300: #ffbcfd;
+  --adc-pink-400: #ffaffd;
+  --adc-pink-500: #ff9bfc;
+  --adc-pink-600: #e88de5;
+  --adc-pink-700: #b56eb3;
+  --adc-pink-800: #8c558b;
+  --adc-pink-900: #6b416a;
+
+  /* Secondary palette: violet */
+  --adc-violet-100: #e2daff;
+  --adc-violet-200: #d4c8ff;
+  --adc-violet-300: #c0afff;
+  --adc-violet-400: #b49fff;
+  --adc-violet-500: #a187ff;
+  --adc-violet-600: #937be8;
+  --adc-violet-700: #7260b5;
+  --adc-violet-800: #594a8c;
+  --adc-violet-900: #44396b;
+
+  /* Secondary palette: teal */
+  --adc-teal-100: #bdf9ef;
+  --adc-teal-200: #9df6e7;
+  --adc-teal-300: #71f2dc;
+  --adc-teal-400: #55efd5;
+  --adc-teal-500: #2bebcb;
+  --adc-teal-600: #27d6b9;
+  --adc-teal-700: #1fa790;
+  --adc-teal-800: #188170;
+  --adc-teal-900: #126355;
+
+  /* Secondary palette: green */
+  --adc-green-100: #cbf9d8;
+  --adc-green-200: #b2f6c5;
+  --adc-green-300: #8ff2ab;
+  --adc-green-400: #79ef9a;
+  --adc-green-500: #58eb81;
+  --adc-green-600: #50d675;
+  --adc-green-700: #3ea75c;
+  --adc-green-800: #308147;
+  --adc-green-900: #256336;
+
+  /* Secondary palette: yellow */
+  --adc-yellow-100: #fffbc6;
+  --adc-yellow-200: #fff9aa;
+  --adc-yellow-300: #fff784;
+  --adc-yellow-400: #fff56c;
+  --adc-yellow-500: #fff347;
+  --adc-yellow-600: #e8dd41;
+  --adc-yellow-700: #b5ad32;
+  --adc-yellow-800: #8c8627;
+  --adc-yellow-900: #6b661e;
+
+  /* Secondary palette: gold */
+  --adc-gold-100: #f7edd4;
+  --adc-gold-200: #f3e4bf;
+  --adc-gold-300: #eed8a2;
+  --adc-gold-400: #ead190;
+  --adc-gold-500: #e5c574;
+  --adc-gold-600: #d0b36a;
+  --adc-gold-700: #a38c52;
+  --adc-gold-800: #7e6c40;
+  --adc-gold-900: #605331;
+
+  /* Semantic tokens */
+  --adc-bg: var(--adc-white);
+  --adc-fg: var(--adc-black);
+  --adc-muted: #666666;
+  --adc-border: #000000;
+  --adc-accent: var(--adc-teal);
+  --adc-accent-2: var(--adc-violet);
+  --adc-focus: var(--adc-violet-700);
+
+  /* Typography */
+  --adc-font-display: "Ease Display", "DM Sans", "Segoe UI", Arial, sans-serif;
+  --adc-font-body: "Ease SemiDisplay", "DM Sans", "Segoe UI", Arial, sans-serif;
+  --adc-weight-regular: 400;
+  --adc-weight-semibold: 600;
+  --adc-display-line-height: 0.95;
+  --adc-body-line-height: 1.2;
+  --adc-body-line-height-loose: 1.4;
+  --adc-title-letter-spacing: -0.05em;
+
+  /* Type scale: guidelines indicate a large contrast, roughly 5:1 headline/body ratio. */
+  --adc-text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --adc-text-sm: clamp(0.875rem, 0.82rem + 0.3vw, 1rem);
+  --adc-text-md: clamp(1rem, 0.95rem + 0.35vw, 1.25rem);
+  --adc-text-lg: clamp(1.25rem, 1rem + 1vw, 2rem);
+  --adc-heading-3: clamp(1.5rem, 1rem + 2.4vw, 3rem);
+  --adc-heading-2: clamp(3rem, 1.5rem + 7vw, 7.5rem);
+  --adc-heading-1: clamp(5rem, 2rem + 14vw, 13rem);
+
+  /* Layout */
+  --adc-radius-sm: 0.25rem;
+  --adc-radius-md: 0.75rem;
+  --adc-radius-lg: 1.25rem;
+  --adc-space-1: 0.25rem;
+  --adc-space-2: 0.5rem;
+  --adc-space-3: 0.75rem;
+  --adc-space-4: 1rem;
+  --adc-space-6: 1.5rem;
+  --adc-space-8: 2rem;
+  --adc-space-12: 3rem;
+  --adc-space-16: 4rem;
+  --adc-container: 120rem;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  color: var(--adc-fg);
+  background: var(--adc-bg);
+  font-family: var(--adc-font-body);
+  font-size: 100%;
+  line-height: var(--adc-body-line-height);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  color: var(--adc-fg);
+  background: var(--adc-bg);
+  font-family: var(--adc-font-body);
+  font-weight: var(--adc-weight-regular);
+}
+
+::selection {
+  color: var(--adc-black);
+  background: var(--adc-yellow);
+}
+
+img, svg, video { max-width: 100%; height: auto; }
+
+a {
+  color: currentColor;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.16em;
+}
+
+a:hover { text-decoration-thickness: 0.14em; }
+
+:focus-visible {
+  outline: 0.18rem solid var(--adc-focus);
+  outline-offset: 0.18rem;
+}
+
+h1, h2, h3, h4, h5, h6,
+.adc-display,
+.adc-heading-1,
+.adc-heading-2,
+.adc-heading-3 {
+  margin: 0 0 var(--adc-space-6);
+  color: var(--adc-black);
+  font-family: var(--adc-font-display);
+  font-weight: var(--adc-weight-regular);
+  letter-spacing: var(--adc-title-letter-spacing);
+}
+
+h1, .adc-heading-1 {
+  font-size: var(--adc-heading-1);
+  line-height: var(--adc-display-line-height);
+}
+
+h2, .adc-heading-2 {
+  font-size: var(--adc-heading-2);
+  line-height: 1;
+}
+
+h3, .adc-heading-3 {
+  font-size: var(--adc-heading-3);
+  line-height: 1;
+}
+
+h4, h5, h6 {
+  font-size: var(--adc-text-lg);
+  line-height: 1.05;
+}
+
+p, ul, ol, dl, blockquote {
+  margin: 0 0 var(--adc-space-6);
+}
+
+p, li, dd, dt, .adc-body {
+  font-size: var(--adc-text-md);
+  line-height: var(--adc-body-line-height-loose);
+}
+
+strong, b, .adc-semibold { font-weight: var(--adc-weight-semibold); }
+
+small, .adc-small {
+  font-size: var(--adc-text-sm);
+  line-height: var(--adc-body-line-height);
+}
+
+.adc-eyebrow {
+  display: inline-block;
+  margin-bottom: var(--adc-space-4);
+  font-family: var(--adc-font-body);
+  font-size: var(--adc-text-xs);
+  font-weight: var(--adc-weight-semibold);
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.adc-container {
+  width: min(100% - 2rem, var(--adc-container));
+  margin-inline: auto;
+}
+
+.adc-section {
+  padding-block: clamp(4rem, 10vw, 12rem);
+}
+
+.adc-hero {
+  min-height: 80vh;
+  display: grid;
+  align-items: center;
+  background: var(--adc-white);
+  color: var(--adc-black);
+  overflow: hidden;
+}
+
+.adc-hero__content {
+  width: min(72rem, 100%);
+  padding: var(--adc-space-8);
+}
+
+.adc-card {
+  background: var(--adc-white);
+  color: var(--adc-black);
+  border: 1px solid var(--adc-border);
+  padding: clamp(1.25rem, 3vw, 3rem);
+}
+
+.adc-card--accent {
+  background: var(--adc-accent);
+  border-color: transparent;
+}
+
+.adc-button,
+button.adc-button,
+a.adc-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--adc-black);
+  border-radius: 999rem;
+  background: var(--adc-black);
+  color: var(--adc-white);
+  font: var(--adc-weight-semibold) var(--adc-text-sm) / 1 var(--adc-font-body);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.adc-button:hover {
+  background: var(--adc-white);
+  color: var(--adc-black);
+}
+
+.adc-button--secondary {
+  background: var(--adc-white);
+  color: var(--adc-black);
+}
+
+.adc-button--secondary:hover {
+  background: var(--adc-black);
+  color: var(--adc-white);
+}
+
+.adc-button--accent {
+  background: var(--adc-accent);
+  color: var(--adc-black);
+  border-color: var(--adc-accent);
+}
+
+.adc-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.7rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999rem;
+  background: var(--adc-black);
+  color: var(--adc-white);
+  font: var(--adc-weight-regular) var(--adc-text-sm) / 1 var(--adc-font-body);
+}
+
+.adc-surface-black {
+  --adc-bg: var(--adc-black);
+  --adc-fg: var(--adc-white);
+  background: var(--adc-black);
+  color: var(--adc-white);
+}
+
+.adc-surface-black h1,
+.adc-surface-black h2,
+.adc-surface-black h3,
+.adc-surface-black h4,
+.adc-surface-black h5,
+.adc-surface-black h6 { color: var(--adc-white); }
+
+.adc-bg-violet { background: var(--adc-violet); }
+.adc-bg-pink { background: var(--adc-pink); }
+.adc-bg-teal { background: var(--adc-teal); }
+.adc-bg-green { background: var(--adc-green); }
+.adc-bg-yellow { background: var(--adc-yellow); }
+.adc-bg-gold { background: var(--adc-gold); }
+.adc-bg-black { background: var(--adc-black); color: var(--adc-white); }
+.adc-bg-white { background: var(--adc-white); color: var(--adc-black); }
+
+.adc-text-black { color: var(--adc-black); }
+.adc-text-white { color: var(--adc-white); }
+.adc-text-muted { color: var(--adc-muted); }
+
+/* Pattern hooks: use with one exported brand pattern asset only. Avoid gradients or multiple pattern exports in one frame. */
+.adc-pattern {
+  --adc-pattern-color: var(--adc-accent);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.adc-pattern::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 1;
+  background-color: var(--adc-pattern-color);
+  mask-image: var(--adc-pattern-url);
+  mask-repeat: no-repeat;
+  mask-position: var(--adc-pattern-position, center);
+  mask-size: var(--adc-pattern-size, cover);
+  -webkit-mask-image: var(--adc-pattern-url);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: var(--adc-pattern-position, center);
+  -webkit-mask-size: var(--adc-pattern-size, cover);
+}
+
+.adc-pattern--white::before { --adc-pattern-color: var(--adc-white); }
+.adc-pattern--pink::before { --adc-pattern-color: var(--adc-pink); }
+.adc-pattern--violet::before { --adc-pattern-color: var(--adc-violet); }
+.adc-pattern--teal::before { --adc-pattern-color: var(--adc-teal); }
+.adc-pattern--green::before { --adc-pattern-color: var(--adc-green); }
+.adc-pattern--yellow::before { --adc-pattern-color: var(--adc-yellow); }
+.adc-pattern--gold::before { --adc-pattern-color: var(--adc-gold); }
+.adc-pattern--black::before { --adc-pattern-color: var(--adc-black); }
+
+/* Photography treatments: guidelines allow white pattern overlays on photography. */
+.adc-photo-pattern {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.adc-photo-pattern::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-color: var(--adc-white);
+  mask-image: var(--adc-pattern-url);
+  mask-repeat: no-repeat;
+  mask-position: var(--adc-pattern-position, center);
+  mask-size: var(--adc-pattern-size, cover);
+  -webkit-mask-image: var(--adc-pattern-url);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: var(--adc-pattern-position, center);
+  -webkit-mask-size: var(--adc-pattern-size, cover);
+}
+
+/* Data visualisation tokens */
+.adc-chart {
+  --adc-chart-1: var(--adc-green-500);
+  --adc-chart-2: var(--adc-teal-500);
+  --adc-chart-3: var(--adc-violet-500);
+  --adc-chart-4: var(--adc-pink-500);
+  --adc-chart-5: var(--adc-gold-500);
+  --adc-chart-6: var(--adc-yellow-500);
+  font-family: var(--adc-font-body);
+  color: var(--adc-black);
+}
+
+/* Utility colour pairs from the guidelines */
+.adc-pair-green-pink { --adc-accent: var(--adc-green); --adc-accent-2: var(--adc-pink); }
+.adc-pair-violet-teal { --adc-accent: var(--adc-violet); --adc-accent-2: var(--adc-teal); }
+.adc-pair-teal-green { --adc-accent: var(--adc-teal); --adc-accent-2: var(--adc-green); }
+.adc-pair-gold-yellow { --adc-accent: var(--adc-gold); --adc-accent-2: var(--adc-yellow); }
+.adc-pair-pink-gold { --adc-accent: var(--adc-pink); --adc-accent-2: var(--adc-gold); }
+.adc-pair-violet-yellow { --adc-accent: var(--adc-violet); --adc-accent-2: var(--adc-yellow); }
+
+@media (max-width: 48rem) {
+  .adc-hero { min-height: 64vh; }
+  .adc-hero__content { padding: var(--adc-space-4); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
