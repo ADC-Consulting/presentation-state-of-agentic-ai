@@ -1,0 +1,8 @@
+# Build context exclusions — keep the image small
+.git
+.claude
+Dockerfile
+.dockerignore
+
+# Unused source video (not referenced by index.html)
+RegBot_Edit2.mp4
